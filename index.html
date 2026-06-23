@@ -183,5 +183,42 @@
         <p>© 2026 Starbucks Coffee Company. All rights reserved.</p>
       </div>
     </footer>
+    <script>
+  // Hamburger Menu
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  menuBtn.addEventListener("click", function () {
+    menu.classList.toggle("hidden");
+  });
+
+  // Welcome Message
+  alert("Welcome to Starbucks Coffee Company!");
+
+  // Change Page Title When User Leaves Tab
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      document.title = "Come Back ☕";
+    } else {
+      document.title = "Starbucks Coffee Company";
+    }
+  });
+
+  // Button Click Messages
+  const buttons = document.querySelectorAll(".btn");
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      alert("Thank you for choosing Starbucks!");
+    });
+  });
+
+  // Footer Year Automatically Updates
+  const footerText = document.querySelector(".footer p");
+  const year = new Date().getFullYear();
+
+  footerText.textContent =
+    "© " + year + " Starbucks Coffee Company. All rights reserved.";
+</script>
   </body>
 </html>
